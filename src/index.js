@@ -7,6 +7,10 @@ app.post("/api/auth", (req, res) => {
     res.status(400).json({ errors: { global: "Invalid Credentials Moron!" } });
 });
 
+app.get("/api", (req, res) => {
+    res.status(400).json({ success: true });
+});
+
 app.get("/*", (req, response) => {
     response.sendFile(path.join(__dirname, "index.html"));
 });
